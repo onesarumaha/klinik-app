@@ -2,7 +2,7 @@ Cara instalasi :
 
 Clone repository menggunakan perintah git clone https://github.com/onesarumaha/klinik-app.git
 
-Masuk ke direktori project lalu buat branch baru dengan perintah git checkout -b klinik-app/nama-branch
+Masuk ke direktori project lalu buat branch baru dengan perintah git checkout -b nama-branch
 
 Install seluruh dependency Laravel menggunakan perintah composer install
 
@@ -23,3 +23,5 @@ Jalankan frontend dalam mode development menggunakan perintah npm run dev
 Jalankan migrasi database menggunakan perintah php artisan migrate
 
 Jalankan aplikasi Laravel menggunakan perintah php artisan serve
+
+selesai

@@ -3,7 +3,7 @@
           <div class="sidebar-brand-icon">
               <img src="{{ asset('frontend-dashboard/img/logo/logo2.png') }}">
           </div>
-          <div class="sidebar-brand-text mx-3">RuangAdmin</div>
+          <div class="sidebar-brand-text mx-3">KlinikKu</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
@@ -26,7 +26,7 @@
               <div class="bg-white py-2 collapse-inner rounded">
                   <h6 class="collapse-header">Menu</h6>
                   <a class="collapse-item" href="{{ route('patients.index') }}">Data Pasien</a>
-                  <a class="collapse-item" href="buttons.html">Buttons</a>
+                  <a class="collapse-item" href="{{ route('data-obat') }}">Data Obat</a>
                   <a class="collapse-item" href="dropdowns.html">Dropdowns</a>
                   <a class="collapse-item" href="modals.html">Modals</a>
                   <a class="collapse-item" href="popovers.html">Popovers</a>

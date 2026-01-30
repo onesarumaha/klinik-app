@@ -23,7 +23,7 @@
         </a>
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{route('users')}}">Data User</a>
+            <a class="collapse-item" href="">Data User</a>
             <a class="collapse-item" href="">Data Pasien</a>
             <a class="collapse-item" href="">Data Obat</a>
          

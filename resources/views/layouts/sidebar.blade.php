@@ -24,8 +24,8 @@
           <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap"
               data-parent="#accordionSidebar">
               <div class="bg-white py-2 collapse-inner rounded">
-                  <h6 class="collapse-header">Bootstrap UI</h6>
-                  <a class="collapse-item" href="alerts.html">Alerts</a>
+                  <h6 class="collapse-header">Menu</h6>
+                  <a class="collapse-item" href="{{ route('patients.index') }}">Data Pasien</a>
                   <a class="collapse-item" href="buttons.html">Buttons</a>
                   <a class="collapse-item" href="dropdowns.html">Dropdowns</a>
                   <a class="collapse-item" href="modals.html">Modals</a>

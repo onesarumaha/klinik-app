@@ -309,7 +309,7 @@
           </div>
           <!-- Donate Link, You can delete this for development -->
 
-         
+          
 
         </div>
 @endsection

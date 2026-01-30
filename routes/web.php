@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PatientController;
+use App\Models\Patient;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,10 +18,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    // master patients
+    Route::resource('patients', PatientController::class);
 
     // master users
     Route::get('/users', [ProfileController::class, 'index'])->name('user.index');
-
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

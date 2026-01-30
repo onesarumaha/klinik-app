@@ -21,7 +21,9 @@ Route::middleware('auth')->group(function () {
 
     // master users
     Route::get('/users', [ProfileController::class, 'index'])->name('user.index');
-    Route::get('/patient', [PatientController::class, 'index'])->name('patients.index');
+    
+    // master patients
+    Route::resource('patients', PatientController::class);
 
     // master data obat 
     Route::get('/data-obat', [ObatController::class, 'index'])->name('data-obat');

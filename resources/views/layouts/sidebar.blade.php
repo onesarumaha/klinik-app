@@ -32,6 +32,17 @@
                   <a class="collapse-item" href="popovers.html">Popovers</a>
                   <a class="collapse-item" href="progress-bar.html">Progress Bars</a>
               </div>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
+          aria-expanded="true" aria-controls="collapseBootstrap">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span>Master</span>
+        </a>
+        <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="">Data User</a>
+            <a class="collapse-item" href="">Data Pasien</a>
+            <a class="collapse-item" href="">Data Obat</a>
+         
           </div>
       </li>
       <li class="nav-item">

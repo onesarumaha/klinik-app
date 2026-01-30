@@ -25,7 +25,7 @@ Route::middleware('auth')->group(function () {
     // master users
     Route::get('/users', [ProfileController::class, 'index'])->name('user.index');
 
-    // master data obat
+    // master data obat 
     Route::get('/data-obat', [ObatController::class, 'index'])->name('data-obat');
 });
 

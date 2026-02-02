@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h3>Tambah Data Pasien</h3>
+        <h3 class="text-primary">Tambah Data Pasien</h3>
 
         <form action="{{ route('data_pasien.store') }}" method="POST" id="createForm" novalidate>
             @csrf

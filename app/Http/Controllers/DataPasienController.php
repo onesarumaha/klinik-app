@@ -15,7 +15,7 @@ class DataPasienController extends Controller
             return $query->where('nama', 'like', "%{$search}%")
                 ->orWhere('no_rekam_medis', 'like', "%{$search}%")
                 ->orWhere('nik', 'like', "%{$search}%");
-        })->orderBy('created_at', 'desc')->paginate(5);
+        })->orderBy('created_at', 'desc')->get();
 
         return view('data_pasien.index', compact('pasien'));
     }

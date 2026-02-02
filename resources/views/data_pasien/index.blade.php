@@ -11,14 +11,13 @@
             <div class="col-md-6">
                 <form action="{{ route('data_pasien.index') }}" method="GET">
                     <div class="input-group">
-                        <input type="text" name="search" class="form-control" placeholder="Cari Nama / No RM / NIK" value="{{ request('search') }}">
+                        <input type="text" name="search" class="form-control" placeholder="Cari Nama / No RM / NIK"
+                            value="{{ request('search') }}">
                         <button class="btn btn-primary" type="submit">Cari</button>
                     </div>
                 </form>
             </div>
         </div>
-
-
 
         <table class="table table-bordered">
             <thead>
@@ -48,8 +47,8 @@
                         <td>
                             <a href="{{ route('data_pasien.show', $p->id) }}" class="btn btn-info btn-sm">Lihat</a>
                             <a href="{{ route('data_pasien.edit', $p->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="{{ route('data_pasien.destroy', $p->id) }}" method="POST"
-                                style="display:inline-block" class="delete-form">
+                            <form action="{{ route('data_pasien.destroy', $p->id) }}" method="POST" style="display:inline-block"
+                                class="delete-form">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm btn-delete">Hapus</button>
@@ -78,7 +77,7 @@
 
             // Delete Confirmation
             document.querySelectorAll('.delete-form').forEach(form => {
-                form.addEventListener('submit', function(e) {
+                form.addEventListener('submit', function (e) {
                     e.preventDefault();
                     Swal.fire({
                         title: 'Apakah anda yakin?',

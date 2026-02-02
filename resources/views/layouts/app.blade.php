@@ -15,6 +15,9 @@
         type="text/css">
     <link href="{{ asset('frontend-dashboard/css/ruang-admin.min.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend-dashboard/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet"  />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body id="page-top">
@@ -89,6 +92,7 @@
     <script src="{{ asset('frontend-dashboard/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('frontend-dashboard/js/ruang-admin.min.js') }}"></script>
     <script src="{{ asset('frontend-dashboard/vendor/chart.js/Chart.min.js') }}"></script>
+<<<<<<< HEAD
     <script src="{{ asset('frontend-dashboard/js/demo/chart-area-demo.js') }}"></script>
 
      <script src="{{ asset('frontend-dashboard/vendor/datatables/jquery.dataTables.min.js')}}"></script>
@@ -101,6 +105,10 @@
                 $("#dataTableHover").DataTable(); // ID From dataTable with Hover
             });
         </script>
+=======
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    @stack('scripts')
+>>>>>>> 147ac0c4473eb574057ad4d6a06bea24d05ac132
 
 </body>
 

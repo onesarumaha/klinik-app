@@ -29,6 +29,20 @@
               </div>
             </div>
           </div>
+          <!--Row-->
+
+          <!-- Donate Link, You can delete this for development -->
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <p>Do you like this template ? you can download from <a href="https://github.com/indrijunanda/RuangAdmin"
+                  class="btn btn-primary btn-sm" target="_blank"><i class="fab fa-fw fa-github"></i>&nbsp;GitHub</a> or <a href="https://trakteer.id/indrijunanda/tip"
+                  class="btn btn-success btn-sm" target="_blank">Donate</a></p>
+            </div>
+          </div>
+          <!-- Donate Link, You can delete this for development -->
+
+          
+
         </div>
       </div>
       <!-- Earnings (Annual) Card Example -->

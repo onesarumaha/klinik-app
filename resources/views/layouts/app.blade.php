@@ -15,6 +15,7 @@
         type="text/css">
     <link href="{{ asset('frontend-dashboard/css/ruang-admin.min.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -60,8 +61,8 @@
     <script src="{{ asset('frontend-dashboard/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('frontend-dashboard/js/ruang-admin.min.js') }}"></script>
     <script src="{{ asset('frontend-dashboard/vendor/chart.js/Chart.min.js') }}"></script>
-    <script src="{{ asset('frontend-dashboard/js/demo/chart-area-demo.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    @stack('scripts')
 
 </body>
 

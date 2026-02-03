@@ -21,7 +21,7 @@ class ObatController extends Controller
      */
     public function create()
     {
-        //
+        return view('data_obat.create');
     }
 
     /**
@@ -29,7 +29,18 @@ class ObatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'kode' => 'required|unique:data_obat,kode',
+            'nama' => 'required',
+            'kategori' => 'required',
+            'satuan' => 'required',
+            'harga' => 'required|numeric',
+            'stok' => 'nullable|integer',
+        ]);
+
+        ObatModel::create($request->all());
+
+        return redirect()->route('data-obat')->with('success', 'Data obat berhasil ditambahkan!');
     }
 
     /**
@@ -45,7 +56,8 @@ class ObatController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $obat = ObatModel::findOrFail($id);
+        return view('data_obat.edit', compact('obat'));
     }
 
     /**
@@ -53,7 +65,20 @@ class ObatController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $obat = ObatModel::findOrFail($id);
+
+        $request->validate([
+            'kode' => 'required|unique:data_obat,kode,' . $id,
+            'nama' => 'required',
+            'kategori' => 'required',
+            'satuan' => 'required',
+            'harga' => 'required|numeric',
+            'stok' => 'nullable|integer',
+        ]);
+
+        $obat->update($request->all());
+
+        return redirect()->route('data-obat')->with('success', 'Data obat berhasil diperbarui!');
     }
 
     /**
@@ -61,6 +86,9 @@ class ObatController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $obat = ObatModel::findOrFail($id);
+        $obat->delete();
+
+        return redirect()->route('data-obat')->with('success', 'Data obat berhasil dihapus!');
     }
 }

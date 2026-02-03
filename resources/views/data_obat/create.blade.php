@@ -1,67 +1,87 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <h3>Tambah Data Pasien</h3>
+    <div class="container-fluid" id="container-wrapper">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Tambah Data Obat</h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ route('data-obat') }}">Data Obat</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Tambah</li>
+            </ol>
+        </div>
 
-        <form action="{{ route('patients.store') }}" method="POST">
-            @csrf
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card mb-4">
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Form Tambah Obat</h6>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ route('data-obat.store') }}" method="POST" id="createForm" novalidate>
+                            @csrf
+                            <div class="row">
+                                <!-- Left Column -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Kode Obat</label>
+                                        <input type="text" name="kode" class="form-control"
+                                            placeholder="Contoh: A001" required>
+                                    </div>
 
-            <div class="mb-2">
-                <label>No Rekam Medis</label>
-                <input type="text" name="no_rekam_medis" class="form-control" required>
+                                    <div class="form-group">
+                                        <label>Nama Obat</label>
+                                        <input type="text" name="nama"
+                                            class="form-control @error('nama') is-invalid @enderror"
+                                            placeholder="Masukkan Nama Obat" required>
+                                        @error('nama')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Kategori</label>
+                                        <input type="text" name="kategori" class="form-control"
+                                            placeholder="Masukkan Kategori" required>
+                                    </div>
+                                </div>
+
+                                <!-- Right Column -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Satuan</label>
+                                        <select name="satuan" class="form-control" required>
+                                            <option value="" disabled selected>- Pilih Satuan -</option>
+                                            <option value="Tablet">Tablet</option>
+                                            <option value="Kapsul">Kapsul</option>
+                                            <option value="Sirup">Sirup</option>
+                                            <option value="Botol">Botol</option>
+                                            <option value="Box">Box</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Harga</label>
+                                        <input type="number" name="harga" class="form-control"
+                                            placeholder="Rp 0" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Stok</label>
+                                        <input type="number" name="stok" class="form-control"
+                                            placeholder="0">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <button type="submit" class="btn btn-primary">Simpan Data</button>
+                                <a href="{{ route('data-obat') }}" class="btn btn-outline-secondary">Batal</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-
-            <div class="mb-2">
-                <label>NIK</label>
-                <input type="text" name="nik" class="form-control" @error('nik') is-invalid @enderror required>
-                @error('nik')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
-
-            <div class="mb-2">
-                <label>Nama</label>
-                <input type="text" name="nama" class="form-control" required>
-            </div>
-
-            <div class="mb-2">
-                <label>Jenis Kelamin</label>
-                <select name="jk" class="form-control" required>
-                    <option value="L">Laki-laki</option>
-                    <option value="P">Perempuan</option>
-                </select>
-            </div>
-
-            <div class="mb-2">
-                <label>Tanggal Lahir</label>
-                <input type="date" name="tgl_lahir" class="form-control" required>
-            </div>
-
-            <div class="mb-2">
-                <label>No HP</label>
-                <input type="text" name="hp" class="form-control">
-            </div>
-
-            <div class="mb-2">
-                <label>Alamat</label>
-                <textarea name="alamat" class="form-control"></textarea>
-            </div>
-
-            <div class="mb-3">
-                <label>Golongan Darah</label>
-                <select name="gol_darah" class="form-control">
-                    <option value="">-</option>
-                    <option>A</option>
-                    <option>B</option>
-                    <option>AB</option>
-                    <option>O</option>
-                </select>
-            </div>
-
-            <button class="btn btn-primary">Simpan</button>
-            <a href="{{ route('patients.index') }}" class="btn btn-secondary">Batal</a>
-        </form>
+        </div>
     </div>
     @if ($errors->any())
         <div class="alert alert-danger mt-3">

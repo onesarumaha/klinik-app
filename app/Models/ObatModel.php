@@ -11,5 +11,5 @@ class ObatModel extends Model
     use HasFactory, SoftDeletes;
 
     protected $table = 'data_obat';
-    protected $fillable = ['kode','nama','kategori', 'satuan', 'harga' ];
+    protected $fillable = ['kode', 'nama', 'kategori', 'satuan', 'harga', 'stok'];
 }

@@ -21,8 +21,13 @@ Route::middleware('auth')->group(function () {
     Route::resource('data_pasien', DataPasienController::class);
 
 
-    // master data obat 
+    // master data obat
     Route::get('/data-obat', [ObatController::class, 'index'])->name('data-obat');
+    Route::post('/data-obat', [ObatController::class, 'store'])->name('data-obat.store');
+    Route::get('/data-obat/{id}/edit', [ObatController::class, 'edit'])->name('data-obat.edit');
+    Route::put('/data-obat/{id}', [ObatController::class, 'update'])->name('data-obat.update');
+    Route::delete('/data-obat/{id}', [ObatController::class, 'destroy'])->name('data-obat.destroy');
+
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

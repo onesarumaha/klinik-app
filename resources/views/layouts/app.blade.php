@@ -14,8 +14,7 @@
     <link href="{{ asset('frontend-dashboard/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"
         type="text/css">
     <link href="{{ asset('frontend-dashboard/css/ruang-admin.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontend-dashboard/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('frontend-dashboard/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
@@ -94,12 +93,12 @@
     <script src="{{ asset('frontend-dashboard/vendor/chart.js/Chart.min.js') }}"></script>
     <script src="{{ asset('frontend-dashboard/js/demo/chart-area-demo.js') }}"></script>
 
-    <script src="{{ asset('frontend-dashboard/vendor/datatables/jquery.dataTables.min.js')}}"></script>
-    <script src="{{ asset('frontend-dashboard/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{ asset('frontend-dashboard/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('frontend-dashboard/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
 
     <!-- Page level custom scripts -->
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $("#dataTable").DataTable(); // ID From dataTable
             $("#dataTableHover").DataTable(); // ID From dataTable with Hover
         });

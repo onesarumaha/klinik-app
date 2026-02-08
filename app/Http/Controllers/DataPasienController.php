@@ -32,7 +32,7 @@ class DataPasienController extends Controller
             'nik' => 'required|unique:data_pasien,nik',
             'nama' => 'required',
             'tanggal_lahir' => 'required|date',
-            'jenis_kelamin' => 'required|in:L,P',
+            'jk' => 'required|in:L,P',
             'no_hp' => 'required',
         ]);
 
@@ -58,7 +58,7 @@ class DataPasienController extends Controller
             'nik' => 'required|unique:data_pasien,nik,' . $data_pasien->id,
             'nama' => 'required',
             'tanggal_lahir' => 'required|date',
-            'jenis_kelamin' => 'required',
+            'jk' => 'required',
             'no_hp' => 'required',
         ]);
 

@@ -15,7 +15,7 @@ class DataPasien extends Model
         'no_rekam_medis',
         'nik',
         'nama',
-        'jenis_kelamin',
+        'jk',
         'tanggal_lahir',
         'no_hp',
         'alamat',

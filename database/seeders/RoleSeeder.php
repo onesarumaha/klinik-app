@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
+use App\Models\Role;
 
 class RoleSeeder extends Seeder
 {
@@ -14,19 +14,15 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('roles')->insert([
-            [
-                'name' => 'Admin',
-            ],
-            [
-                'name' => 'Dokter',
-            ],
-            [
-                'name' => 'Perawat',
-            ],
-            [
-                'name' => 'Kasir',
-            ],
-        ]);
+        $roles = [
+            ['name' => 'admin'],
+            ['name' => 'dokter'],
+            ['name' => 'perawat'],
+            ['name' => 'kasir'],
+        ];
+
+        foreach ($roles as $role) {
+            Role::firstOrCreate($role);
+        }
     }
 }

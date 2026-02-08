@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string('no_rekam_medis');
             $table->string('nik');
             $table->string('nama');
-            $table->string('jenis_kelamin');
+            $table->enum('jk', ['L', 'P'])->after('tanggal_lahir');
             $table->string('tanggal_lahir');
             $table->string('no_hp')->nullable();
             $table->text('alamat')->nullable();

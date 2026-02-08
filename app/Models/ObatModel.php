@@ -12,4 +12,14 @@ class ObatModel extends Model
 
     protected $table = 'data_obat';
     protected $fillable = ['kode', 'nama', 'kategori', 'satuan', 'harga', 'stok'];
+
+    public function stokHistory()
+    {
+        return $this->hasMany(StokObat::class, 'obat_id');
+    }
+
+    public function rekamMedisItems()
+    {
+        return $this->hasMany(RekamMedisObat::class, 'obat_id');
+    }
 }

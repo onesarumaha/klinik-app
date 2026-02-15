@@ -11,12 +11,12 @@
         </div>
 
         @if(session('success'))
-            <div class="alert alert-success alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                {{ session('success') }}
-            </div>
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            {{ session('success') }}
+        </div>
         @endif
 
         <div class="row">
@@ -44,12 +44,13 @@
                                 @foreach($data as $rm)
                                     <tr>
                                         <td>{{ $rm->created_at->format('d/m/Y') }}</td>
-                                        <td>{{ $rm->pasien->nama }}</td>
+                                        <td>{{ $rm->pasien->nama ?? 'Pasien Tidak Ditemukan' }}</td>
                                         <td>{{ Str::limit($rm->keluhan, 30) }}</td>
                                         <td>{{ Str::limit($rm->diagnosis, 30) }}</td>
                                         <td>
                                             @foreach($rm->obats as $item)
-                                                <span class="badge badge-info">{{ $item->obat->nama }} ({{ $item->jumlah }})</span>
+                                                <span class="badge badge-info">{{ $item->obat->nama ?? 'Obat Terhapus' }}
+                                                    ({{ $item->jumlah }})</span>
                                             @endforeach
                                         </td>
                                         <td>

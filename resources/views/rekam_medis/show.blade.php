@@ -21,8 +21,8 @@
                     <div class="card-body">
                         <div class="row mb-3">
                             <div class="col-sm-3 font-weight-bold">Nama Pasien</div>
-                            <div class="col-sm-9">: {{ $rekam_medis->pasien->nama }}
-                                ({{ $rekam_medis->pasien->no_rekam_medis }})</div>
+                            <div class="col-sm-9">: {{ $rekam_medis->pasien->nama ?? 'Pasien Tidak Ditemukan' }}
+                                ({{ $rekam_medis->pasien->no_rekam_medis ?? '-' }})</div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-3 font-weight-bold">Tanggal Periksa</div>
@@ -76,11 +76,11 @@
                                 <li class="list-group-item px-0">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div>
-                                            <h6 class="mb-0 font-weight-bold">{{ $item->obat->nama }}</h6>
+                                            <h6 class="mb-0 font-weight-bold">{{ $item->obat->nama ?? 'Obat Terhapus' }}</h6>
                                             <small class="text-muted">{{ $item->dosis }}</small>
                                         </div>
                                         <span class="badge badge-primary badge-pill">{{ $item->jumlah }}
-                                            {{ $item->obat->satuan }}</span>
+                                            {{ $item->obat->satuan ?? '-' }}</span>
                                     </div>
                                 </li>
                             @endforeach

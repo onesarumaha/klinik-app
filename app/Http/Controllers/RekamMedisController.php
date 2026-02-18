@@ -28,7 +28,7 @@ class RekamMedisController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'pasien_id' => 'required',
+            'pasien_id' => 'required|exists:data_pasien,id',
             'keluhan' => 'required',
             'diagnosis' => 'required',
             'obats' => 'required|array',

@@ -17,7 +17,7 @@
         Features
     </div>
 
-    @if(auth()->user()->role->hasPermission('view_data_pasien') || auth()->user()->role->hasPermission('view_data_obat') || auth()->user()->role->hasPermission('view_rekam_medis'))
+    @if(auth()->user()->role->hasPermission('view_data_pasien') || auth()->user()->role->hasPermission('view_data_obat'))
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
                 aria-expanded="true" aria-controls="collapseBootstrap">
@@ -32,11 +32,7 @@
                             <i class="fas fa-user-injured mr-2"></i> Data Pasien
                         </a>
                     @endif
-                    @if(auth()->user()->role->hasPermission('view_rekam_medis'))
-                        <a class="collapse-item" href="{{ route('rekam_medis.index') }}">
-                            <i class="fas fa-notes-medical mr-2"></i> Rekam Medis
-                        </a>
-                    @endif
+
                     @if(auth()->user()->role->hasPermission('view_data_obat'))
                         <a class="collapse-item" href="{{ route('data-obat') }}">
                             <i class="fas fa-pills mr-2"></i> Data Obat
@@ -44,6 +40,14 @@
                     @endif
                 </div>
             </div>
+        </li>
+    @endif
+
+    @if(auth()->user()->role->hasPermission('view_rekam_medis'))
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('rekam_medis.index') }}">
+                <i class="fas fa-fw fa-notes-medical"></i>
+                <span>Rekam Medis</span></a>
         </li>
     @endif
 
